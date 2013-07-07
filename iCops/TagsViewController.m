@@ -1,23 +1,23 @@
 //
-//  SecondViewController.m
+//  TagsViewController.m
 //  iCops
 //
 //  Created by Simon Guérard on 07/07/13.
 //  Copyright (c) 2013 Simon Guérard. All rights reserved.
 //
 
-#import "AuthorViewController.h"
+#import "TagsViewController.h"
 
-@interface AuthorViewController ()
+@interface TagsViewController ()
 
 @end
 
-@implementation AuthorViewController
+@implementation TagsViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

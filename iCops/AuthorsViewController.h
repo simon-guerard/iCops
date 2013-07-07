@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  AuthorsViewController.h
 //  iCops
 //
 //  Created by Simon Guérard on 07/07/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WelcomeViewController : UIViewController
+@interface AuthorsViewController : UIViewController
 
 @end

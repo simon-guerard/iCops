@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Simon Guérard. All rights reserved.
 //
 
-#import "WelcomeViewController.h"
+#import "BooksViewController.h"
 
-@interface WelcomeViewController ()
+@interface BooksViewController ()
 
 @end
 
-@implementation WelcomeViewController
+@implementation BooksViewController
 
 - (void)viewDidLoad
 {

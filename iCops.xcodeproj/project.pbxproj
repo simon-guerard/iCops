@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		096CE05D1789EA0B00CBA357 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05C1789EA0B00CBA357 /* TagsViewController.m */; };
 		09F51F5B1789CD6800545BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5A1789CD6800545BB3 /* UIKit.framework */; };
 		09F51F5D1789CD6800545BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5C1789CD6800545BB3 /* Foundation.framework */; };
 		09F51F5F1789CD6800545BB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5E1789CD6800545BB3 /* CoreGraphics.framework */; };
@@ -18,10 +19,10 @@
 		09F51F711789CD6900545BB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F701789CD6900545BB3 /* Default-568h@2x.png */; };
 		09F51F741789CD6900545BB3 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F721789CD6900545BB3 /* MainStoryboard_iPhone.storyboard */; };
 		09F51F771789CD6900545BB3 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F751789CD6900545BB3 /* MainStoryboard_iPad.storyboard */; };
-		09F51F7A1789CD6A00545BB3 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F791789CD6A00545BB3 /* WelcomeViewController.m */; };
+		09F51F7A1789CD6A00545BB3 /* BooksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F791789CD6A00545BB3 /* BooksViewController.m */; };
 		09F51F7C1789CD6A00545BB3 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F7B1789CD6A00545BB3 /* first.png */; };
 		09F51F7E1789CD6A00545BB3 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F7D1789CD6A00545BB3 /* first@2x.png */; };
-		09F51F811789CD6A00545BB3 /* AuthorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F801789CD6A00545BB3 /* AuthorViewController.m */; };
+		09F51F811789CD6A00545BB3 /* AuthorsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F801789CD6A00545BB3 /* AuthorsViewController.m */; };
 		09F51F831789CD6A00545BB3 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F821789CD6A00545BB3 /* second.png */; };
 		09F51F851789CD6A00545BB3 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F841789CD6A00545BB3 /* second@2x.png */; };
 		09F51F8D1789CD6A00545BB3 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F8C1789CD6A00545BB3 /* SenTestingKit.framework */; };
@@ -43,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		096CE05B1789EA0B00CBA357 /* TagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
+		096CE05C1789EA0B00CBA357 /* TagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		09F51F571789CD6800545BB3 /* iCops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F51F5A1789CD6800545BB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		09F51F5C1789CD6800545BB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,12 +61,12 @@
 		09F51F701789CD6900545BB3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		09F51F731789CD6900545BB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		09F51F761789CD6900545BB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		09F51F781789CD6900545BB3 /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
-		09F51F791789CD6A00545BB3 /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		09F51F781789CD6900545BB3 /* BooksViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BooksViewController.h; sourceTree = "<group>"; };
+		09F51F791789CD6A00545BB3 /* BooksViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BooksViewController.m; sourceTree = "<group>"; };
 		09F51F7B1789CD6A00545BB3 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
 		09F51F7D1789CD6A00545BB3 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
-		09F51F7F1789CD6A00545BB3 /* AuthorViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorViewController.h; sourceTree = "<group>"; };
-		09F51F801789CD6A00545BB3 /* AuthorViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorViewController.m; sourceTree = "<group>"; };
+		09F51F7F1789CD6A00545BB3 /* AuthorsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AuthorsViewController.h; sourceTree = "<group>"; };
+		09F51F801789CD6A00545BB3 /* AuthorsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AuthorsViewController.m; sourceTree = "<group>"; };
 		09F51F821789CD6A00545BB3 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		09F51F841789CD6A00545BB3 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
 		09F51F8B1789CD6A00545BB3 /* iCopsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iCopsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -137,17 +140,19 @@
 				09F51F6A1789CD6900545BB3 /* AppDelegate.m */,
 				09F51F721789CD6900545BB3 /* MainStoryboard_iPhone.storyboard */,
 				09F51F751789CD6900545BB3 /* MainStoryboard_iPad.storyboard */,
-				09F51F781789CD6900545BB3 /* WelcomeViewController.h */,
-				09F51F791789CD6A00545BB3 /* WelcomeViewController.m */,
+				09F51F781789CD6900545BB3 /* BooksViewController.h */,
+				09F51F791789CD6A00545BB3 /* BooksViewController.m */,
 				09F51F7B1789CD6A00545BB3 /* first.png */,
 				09F51F7D1789CD6A00545BB3 /* first@2x.png */,
-				09F51F7F1789CD6A00545BB3 /* AuthorViewController.h */,
-				09F51F801789CD6A00545BB3 /* AuthorViewController.m */,
+				09F51F7F1789CD6A00545BB3 /* AuthorsViewController.h */,
+				09F51F801789CD6A00545BB3 /* AuthorsViewController.m */,
 				09F51F821789CD6A00545BB3 /* second.png */,
 				09F51F841789CD6A00545BB3 /* second@2x.png */,
 				09F51F611789CD6800545BB3 /* Supporting Files */,
 				09F51FA31789CED900545BB3 /* SeriesViewController.h */,
 				09F51FA41789CED900545BB3 /* SeriesViewController.m */,
+				096CE05B1789EA0B00CBA357 /* TagsViewController.h */,
+				096CE05C1789EA0B00CBA357 /* TagsViewController.m */,
 			);
 			path = iCops;
 			sourceTree = "<group>";
@@ -302,9 +307,10 @@
 			files = (
 				09F51F671789CD6900545BB3 /* main.m in Sources */,
 				09F51F6B1789CD6900545BB3 /* AppDelegate.m in Sources */,
-				09F51F7A1789CD6A00545BB3 /* WelcomeViewController.m in Sources */,
-				09F51F811789CD6A00545BB3 /* AuthorViewController.m in Sources */,
+				09F51F7A1789CD6A00545BB3 /* BooksViewController.m in Sources */,
+				09F51F811789CD6A00545BB3 /* AuthorsViewController.m in Sources */,
 				09F51FA51789CED900545BB3 /* SeriesViewController.m in Sources */,
+				096CE05D1789EA0B00CBA357 /* TagsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +501,7 @@
 				09F51F9F1789CD6B00545BB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09F51FA01789CD6B00545BB3 /* Build configuration list for PBXNativeTarget "iCopsTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +510,7 @@
 				09F51FA21789CD6B00545BB3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
