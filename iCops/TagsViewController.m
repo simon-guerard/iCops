@@ -8,10 +8,6 @@
 
 #import "TagsViewController.h"
 
-@interface TagsViewController ()
-
-@end
-
 @implementation TagsViewController
 
 - (void)viewDidLoad

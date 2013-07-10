@@ -8,10 +8,6 @@
 
 #import "SeriesViewController.h"
 
-@interface SeriesViewController ()
-
-@end
-
 @implementation SeriesViewController
 
 - (void)viewDidLoad
