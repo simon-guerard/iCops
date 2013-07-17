@@ -2,16 +2,17 @@
 //  Book.h
 //  iCops
 //
-//  Created by Simon Guérard on 10/07/13.
+//  Created by Simon Guérard on 12/07/13.
 //  Copyright (c) 2013 Simon Guérard. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-// #import <CoreData/CoreData.h>
+#import <CoreData/CoreData.h>
 
-@interface Book : NSObject //NSManagedObject
 
-@property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *author;
+@interface Book : NSManagedObject
+
+@property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSNumber * idBook;
 
 @end

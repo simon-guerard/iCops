@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0912182D1794134300B4DBB2 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0912182C1794134300B4DBB2 /* NetworkManager.m */; };
+		0912182F17941BCB00B4DBB2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0912182E17941BCB00B4DBB2 /* Settings.bundle */; };
+		09356477178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09356475178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld */; };
+		0935648217902FE9003400D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935648117902FE9003400D3 /* CoreData.framework */; };
+		0935649017903B92003400D3 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 0935648F17903B92003400D3 /* Book.m */; };
 		096CE05D1789EA0B00CBA357 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05C1789EA0B00CBA357 /* TagsViewController.m */; };
+		096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05F178A10A600CBA357 /* BookDetailViewController.m */; };
 		09F51F5B1789CD6800545BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5A1789CD6800545BB3 /* UIKit.framework */; };
 		09F51F5D1789CD6800545BB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5C1789CD6800545BB3 /* Foundation.framework */; };
 		09F51F5F1789CD6800545BB3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5E1789CD6800545BB3 /* CoreGraphics.framework */; };
 		09F51F651789CD6900545BB3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F631789CD6900545BB3 /* InfoPlist.strings */; };
 		09F51F671789CD6900545BB3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F661789CD6900545BB3 /* main.m */; };
-		09F51F6B1789CD6900545BB3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F6A1789CD6900545BB3 /* AppDelegate.m */; };
+		09F51F6B1789CD6900545BB3 /* iCopsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F51F6A1789CD6900545BB3 /* iCopsAppDelegate.m */; };
 		09F51F6D1789CD6900545BB3 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F6C1789CD6900545BB3 /* Default.png */; };
 		09F51F6F1789CD6900545BB3 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F6E1789CD6900545BB3 /* Default@2x.png */; };
 		09F51F711789CD6900545BB3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 09F51F701789CD6900545BB3 /* Default-568h@2x.png */; };
@@ -44,8 +50,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0912182B1794134300B4DBB2 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		0912182C1794134300B4DBB2 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		0912182E17941BCB00B4DBB2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		09356476178EDBC7003400D3 /* iCopsBooksModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCopsBooksModel.xcdatamodel; sourceTree = "<group>"; };
+		0935648117902FE9003400D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0935648E17903B92003400D3 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		0935648F17903B92003400D3 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		09356491179042F6003400D3 /* v0 - book only.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "v0 - book only.xcdatamodel"; sourceTree = "<group>"; };
 		096CE05B1789EA0B00CBA357 /* TagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
 		096CE05C1789EA0B00CBA357 /* TagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
+		096CE05E178A10A600CBA357 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
+		096CE05F178A10A600CBA357 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
 		09F51F571789CD6800545BB3 /* iCops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iCops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		09F51F5A1789CD6800545BB3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		09F51F5C1789CD6800545BB3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,8 +70,8 @@
 		09F51F641789CD6900545BB3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		09F51F661789CD6900545BB3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09F51F681789CD6900545BB3 /* iCops-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iCops-Prefix.pch"; sourceTree = "<group>"; };
-		09F51F691789CD6900545BB3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		09F51F6A1789CD6900545BB3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		09F51F691789CD6900545BB3 /* iCopsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iCopsAppDelegate.h; sourceTree = "<group>"; };
+		09F51F6A1789CD6900545BB3 /* iCopsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iCopsAppDelegate.m; sourceTree = "<group>"; };
 		09F51F6C1789CD6900545BB3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		09F51F6E1789CD6900545BB3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		09F51F701789CD6900545BB3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -84,9 +100,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0935648217902FE9003400D3 /* CoreData.framework in Frameworks */,
+				09F51F5F1789CD6800545BB3 /* CoreGraphics.framework in Frameworks */,
 				09F51F5B1789CD6800545BB3 /* UIKit.framework in Frameworks */,
 				09F51F5D1789CD6800545BB3 /* Foundation.framework in Frameworks */,
-				09F51F5F1789CD6800545BB3 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,10 +120,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		091629FB178DF240000E76C6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				09356475178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld */,
+				09F51F621789CD6800545BB3 /* iCops-Info.plist */,
+				09F51F631789CD6900545BB3 /* InfoPlist.strings */,
+				091629FD178DF264000E76C6 /* Images */,
+				09F51F721789CD6900545BB3 /* MainStoryboard_iPhone.storyboard */,
+				09F51F751789CD6900545BB3 /* MainStoryboard_iPad.storyboard */,
+				0912182E17941BCB00B4DBB2 /* Settings.bundle */,
+			);
+			name = Resources;
+			path = iCops;
+			sourceTree = "<group>";
+		};
+		091629FD178DF264000E76C6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				09F51F6C1789CD6900545BB3 /* Default.png */,
+				09F51F6E1789CD6900545BB3 /* Default@2x.png */,
+				09F51F701789CD6900545BB3 /* Default-568h@2x.png */,
+				09F51F7B1789CD6A00545BB3 /* first.png */,
+				09F51F7D1789CD6A00545BB3 /* first@2x.png */,
+				09F51F821789CD6A00545BB3 /* second.png */,
+				09F51F841789CD6A00545BB3 /* second@2x.png */,
+			);
+			name = Images;
+			path = images;
+			sourceTree = "<group>";
+		};
 		09F51F4E1789CD6800545BB3 = {
 			isa = PBXGroup;
 			children = (
-				09F51F601789CD6800545BB3 /* iCops */,
+				09F51F601789CD6800545BB3 /* Sources */,
+				091629FB178DF240000E76C6 /* Resources */,
+				09F51F611789CD6800545BB3 /* Supporting Files */,
 				09F51F921789CD6A00545BB3 /* iCopsTests */,
 				09F51F591789CD6800545BB3 /* Frameworks */,
 				09F51F581789CD6800545BB3 /* Products */,
@@ -125,6 +174,7 @@
 		09F51F591789CD6800545BB3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0935648117902FE9003400D3 /* CoreData.framework */,
 				09F51F5A1789CD6800545BB3 /* UIKit.framework */,
 				09F51F5C1789CD6800545BB3 /* Foundation.framework */,
 				09F51F5E1789CD6800545BB3 /* CoreGraphics.framework */,
@@ -133,42 +183,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		09F51F601789CD6800545BB3 /* iCops */ = {
+		09F51F601789CD6800545BB3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				09F51F691789CD6900545BB3 /* AppDelegate.h */,
-				09F51F6A1789CD6900545BB3 /* AppDelegate.m */,
-				09F51F721789CD6900545BB3 /* MainStoryboard_iPhone.storyboard */,
-				09F51F751789CD6900545BB3 /* MainStoryboard_iPad.storyboard */,
+				0912182B1794134300B4DBB2 /* NetworkManager.h */,
+				0912182C1794134300B4DBB2 /* NetworkManager.m */,
+				0935648E17903B92003400D3 /* Book.h */,
+				0935648F17903B92003400D3 /* Book.m */,
+				09F51F691789CD6900545BB3 /* iCopsAppDelegate.h */,
+				09F51F6A1789CD6900545BB3 /* iCopsAppDelegate.m */,
 				09F51F781789CD6900545BB3 /* BooksViewController.h */,
 				09F51F791789CD6A00545BB3 /* BooksViewController.m */,
-				09F51F7B1789CD6A00545BB3 /* first.png */,
-				09F51F7D1789CD6A00545BB3 /* first@2x.png */,
 				09F51F7F1789CD6A00545BB3 /* AuthorsViewController.h */,
 				09F51F801789CD6A00545BB3 /* AuthorsViewController.m */,
-				09F51F821789CD6A00545BB3 /* second.png */,
-				09F51F841789CD6A00545BB3 /* second@2x.png */,
-				09F51F611789CD6800545BB3 /* Supporting Files */,
 				09F51FA31789CED900545BB3 /* SeriesViewController.h */,
 				09F51FA41789CED900545BB3 /* SeriesViewController.m */,
 				096CE05B1789EA0B00CBA357 /* TagsViewController.h */,
 				096CE05C1789EA0B00CBA357 /* TagsViewController.m */,
+				096CE05E178A10A600CBA357 /* BookDetailViewController.h */,
+				096CE05F178A10A600CBA357 /* BookDetailViewController.m */,
 			);
+			name = Sources;
 			path = iCops;
 			sourceTree = "<group>";
 		};
 		09F51F611789CD6800545BB3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				09F51F621789CD6800545BB3 /* iCops-Info.plist */,
-				09F51F631789CD6900545BB3 /* InfoPlist.strings */,
 				09F51F661789CD6900545BB3 /* main.m */,
 				09F51F681789CD6900545BB3 /* iCops-Prefix.pch */,
-				09F51F6C1789CD6900545BB3 /* Default.png */,
-				09F51F6E1789CD6900545BB3 /* Default@2x.png */,
-				09F51F701789CD6900545BB3 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			path = iCops;
 			sourceTree = "<group>";
 		};
 		09F51F921789CD6A00545BB3 /* iCopsTests */ = {
@@ -271,6 +317,7 @@
 				09F51F7E1789CD6A00545BB3 /* first@2x.png in Resources */,
 				09F51F831789CD6A00545BB3 /* second.png in Resources */,
 				09F51F851789CD6A00545BB3 /* second@2x.png in Resources */,
+				0912182F17941BCB00B4DBB2 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,11 +353,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				09F51F671789CD6900545BB3 /* main.m in Sources */,
-				09F51F6B1789CD6900545BB3 /* AppDelegate.m in Sources */,
+				09F51F6B1789CD6900545BB3 /* iCopsAppDelegate.m in Sources */,
 				09F51F7A1789CD6A00545BB3 /* BooksViewController.m in Sources */,
 				09F51F811789CD6A00545BB3 /* AuthorsViewController.m in Sources */,
 				09F51FA51789CED900545BB3 /* SeriesViewController.m in Sources */,
 				096CE05D1789EA0B00CBA357 /* TagsViewController.m in Sources */,
+				096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */,
+				09356477178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld in Sources */,
+				0935649017903B92003400D3 /* Book.m in Sources */,
+				0912182D1794134300B4DBB2 /* NetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -397,6 +448,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Debug;
 		};
@@ -433,6 +485,7 @@
 				GCC_PREFIX_HEADER = "iCops/iCops-Prefix.pch";
 				INFOPLIST_FILE = "iCops/iCops-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -444,6 +497,7 @@
 				GCC_PREFIX_HEADER = "iCops/iCops-Prefix.pch";
 				INFOPLIST_FILE = "iCops/iCops-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -513,6 +567,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		09356475178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				09356491179042F6003400D3 /* v0 - book only.xcdatamodel */,
+				09356476178EDBC7003400D3 /* iCopsBooksModel.xcdatamodel */,
+			);
+			currentVersion = 09356476178EDBC7003400D3 /* iCopsBooksModel.xcdatamodel */;
+			path = iCopsBooksModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 09F51F4F1789CD6800545BB3 /* Project object */;
 }

@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BookDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UILabel *bookName;
+@class Book;
+
+@interface BookDetailViewController : UITableViewController
+
+@property (nonatomic, strong) Book *book;
 
 @end
