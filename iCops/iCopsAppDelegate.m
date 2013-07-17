@@ -8,7 +8,6 @@
 
 #import "iCopsAppDelegate.h"
 #import "BooksViewController.h"
-#import "NetworkManager.h"
 
 @interface iCopsAppDelegate ()
 
@@ -168,10 +167,6 @@
 		NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
 		abort();
     }
-    
-    // load data from http request
-    NSString * url = [[NSUserDefaults standardUserDefaults] stringForKey:@"url_cops_preference"];
-    [[NetworkManager sharedInstance]loadData:url];
     
     return _persistentStoreCoordinator;
 }

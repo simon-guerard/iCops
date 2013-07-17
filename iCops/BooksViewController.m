@@ -9,10 +9,12 @@
 #import "BooksViewController.h"
 #import "BookDetailViewController.h"
 #import "Book.h"
+#import "NetworkManager.h"
 
 @interface BooksViewController ()
 
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
+@property (nonatomic, strong) NSURLConnection * connection;
 
 @end
 
@@ -20,13 +22,27 @@
 
 @implementation BooksViewController
 
-@synthesize fetchedResultsController=_fetchedResultsController, managedObjectContext=_managedObjectContext;
+@synthesize fetchedResultsController=_fetchedResultsController, managedObjectContext=_managedObjectContext,connection=_connection;
+@synthesize booksActivityIndicator;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-
+    
+    
+    // load data from http request
+    [self.booksActivityIndicator startAnimating];
+    NSString * urlText = [[NSUserDefaults standardUserDefaults] stringForKey:@"url_cops_preference"];
+    urlText = [urlText stringByAppendingString:@"?page=4"];
+    NSXMLParser *parser;
+    NSURL * url = [NetworkManager smartURLForString:urlText];
+    id id_p = [parser initWithContentsOfURL:url];
+    if ([parser parse]) {
+        // YEAAAAAAH
+    }
+    
+    
     NSError *error;
     if (![[self fetchedResultsController] performFetch:&error]) {
         /*
@@ -235,5 +251,6 @@
         bookDetailViewController.book = selectedBook;
     }
 }
+
 
 @end

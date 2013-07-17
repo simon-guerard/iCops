@@ -12,5 +12,6 @@
 @interface BooksViewController : UITableViewController <NSFetchedResultsControllerDelegate>
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *booksActivityIndicator;
 
 @end

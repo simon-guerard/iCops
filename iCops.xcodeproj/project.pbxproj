@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0912182D1794134300B4DBB2 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0912182C1794134300B4DBB2 /* NetworkManager.m */; };
 		0912182F17941BCB00B4DBB2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0912182E17941BCB00B4DBB2 /* Settings.bundle */; };
 		09356477178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09356475178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld */; };
 		0935648217902FE9003400D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935648117902FE9003400D3 /* CoreData.framework */; };
 		0935649017903B92003400D3 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 0935648F17903B92003400D3 /* Book.m */; };
+		095E11FD1797330A00541F73 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 095E11FB1797330A00541F73 /* NetworkManager.m */; };
 		096CE05D1789EA0B00CBA357 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05C1789EA0B00CBA357 /* TagsViewController.m */; };
 		096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05F178A10A600CBA357 /* BookDetailViewController.m */; };
 		09F51F5B1789CD6800545BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5A1789CD6800545BB3 /* UIKit.framework */; };
@@ -50,14 +50,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0912182B1794134300B4DBB2 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
-		0912182C1794134300B4DBB2 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		0912182E17941BCB00B4DBB2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		09356476178EDBC7003400D3 /* iCopsBooksModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCopsBooksModel.xcdatamodel; sourceTree = "<group>"; };
 		0935648117902FE9003400D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0935648E17903B92003400D3 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		0935648F17903B92003400D3 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		09356491179042F6003400D3 /* v0 - book only.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "v0 - book only.xcdatamodel"; sourceTree = "<group>"; };
+		095E11FB1797330A00541F73 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		095E11FC1797330A00541F73 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		096CE05B1789EA0B00CBA357 /* TagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
 		096CE05C1789EA0B00CBA357 /* TagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		096CE05E178A10A600CBA357 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
@@ -186,8 +186,8 @@
 		09F51F601789CD6800545BB3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				0912182B1794134300B4DBB2 /* NetworkManager.h */,
-				0912182C1794134300B4DBB2 /* NetworkManager.m */,
+				095E11FC1797330A00541F73 /* NetworkManager.h */,
+				095E11FB1797330A00541F73 /* NetworkManager.m */,
 				0935648E17903B92003400D3 /* Book.h */,
 				0935648F17903B92003400D3 /* Book.m */,
 				09F51F691789CD6900545BB3 /* iCopsAppDelegate.h */,
@@ -361,7 +361,7 @@
 				096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */,
 				09356477178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld in Sources */,
 				0935649017903B92003400D3 /* Book.m in Sources */,
-				0912182D1794134300B4DBB2 /* NetworkManager.m in Sources */,
+				095E11FD1797330A00541F73 /* NetworkManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -22,7 +22,7 @@
 			<key>AutocorrectionType</key>
 			<string>No</string>
 			<key>DefaultValue</key>
-			<string>http://127.0.0.1/cops/</string>
+			<string>http://admin.simcafamily.net/cops/index.php</string>
 			<key>Title</key>
 			<string>url cops application</string>
 			<key>Key</key>
