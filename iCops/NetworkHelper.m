@@ -6,14 +6,13 @@
 //  Copyright (c) 2013 Simon Guérard. All rights reserved.
 //
 
-#import "NetworkManager.h"
+#import "NetworkHelper.h"
 
-@implementation NetworkManager
+@implementation NetworkHelper
 
 + (NSURL *)smartURLForString:(NSString *)str
 {
     NSURL *     result;
-    NSString *  trimmedStr;
     NSRange     schemeMarkerRange;
     NSString *  scheme;
     
@@ -21,7 +20,7 @@
     
     result = nil;
     
-    trimmedStr = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSString * trimmedStr = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     if ( (trimmedStr != nil) && (trimmedStr.length != 0) ) {
         schemeMarkerRange = [trimmedStr rangeOfString:@"://"];
         

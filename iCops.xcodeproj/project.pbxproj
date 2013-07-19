@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0912182F17941BCB00B4DBB2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 0912182E17941BCB00B4DBB2 /* Settings.bundle */; };
+		091279861799602E0027FA5B /* SynchronizeThread.m in Sources */ = {isa = PBXBuildFile; fileRef = 091279851799602E0027FA5B /* SynchronizeThread.m */; };
 		09356477178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 09356475178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld */; };
 		0935648217902FE9003400D3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0935648117902FE9003400D3 /* CoreData.framework */; };
 		0935649017903B92003400D3 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 0935648F17903B92003400D3 /* Book.m */; };
-		095E11FD1797330A00541F73 /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 095E11FB1797330A00541F73 /* NetworkManager.m */; };
+		093BEF451798665A00140D5A /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 093BEF441798665A00140D5A /* Article.m */; };
+		095E11FD1797330A00541F73 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 095E11FB1797330A00541F73 /* NetworkHelper.m */; };
 		096CE05D1789EA0B00CBA357 /* TagsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05C1789EA0B00CBA357 /* TagsViewController.m */; };
 		096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05F178A10A600CBA357 /* BookDetailViewController.m */; };
 		09F51F5B1789CD6800545BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5A1789CD6800545BB3 /* UIKit.framework */; };
@@ -51,13 +53,17 @@
 
 /* Begin PBXFileReference section */
 		0912182E17941BCB00B4DBB2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		091279841799602E0027FA5B /* SynchronizeThread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizeThread.h; sourceTree = "<group>"; };
+		091279851799602E0027FA5B /* SynchronizeThread.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizeThread.m; sourceTree = "<group>"; };
 		09356476178EDBC7003400D3 /* iCopsBooksModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iCopsBooksModel.xcdatamodel; sourceTree = "<group>"; };
 		0935648117902FE9003400D3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0935648E17903B92003400D3 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
 		0935648F17903B92003400D3 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
 		09356491179042F6003400D3 /* v0 - book only.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "v0 - book only.xcdatamodel"; sourceTree = "<group>"; };
-		095E11FB1797330A00541F73 /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
-		095E11FC1797330A00541F73 /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
+		093BEF431798665A00140D5A /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		093BEF441798665A00140D5A /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		095E11FB1797330A00541F73 /* NetworkHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkHelper.m; sourceTree = "<group>"; };
+		095E11FC1797330A00541F73 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		096CE05B1789EA0B00CBA357 /* TagsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagsViewController.h; sourceTree = "<group>"; };
 		096CE05C1789EA0B00CBA357 /* TagsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TagsViewController.m; sourceTree = "<group>"; };
 		096CE05E178A10A600CBA357 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
@@ -186,8 +192,12 @@
 		09F51F601789CD6800545BB3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				095E11FC1797330A00541F73 /* NetworkManager.h */,
-				095E11FB1797330A00541F73 /* NetworkManager.m */,
+				093BEF431798665A00140D5A /* Article.h */,
+				093BEF441798665A00140D5A /* Article.m */,
+				095E11FC1797330A00541F73 /* NetworkHelper.h */,
+				095E11FB1797330A00541F73 /* NetworkHelper.m */,
+				091279841799602E0027FA5B /* SynchronizeThread.h */,
+				091279851799602E0027FA5B /* SynchronizeThread.m */,
 				0935648E17903B92003400D3 /* Book.h */,
 				0935648F17903B92003400D3 /* Book.m */,
 				09F51F691789CD6900545BB3 /* iCopsAppDelegate.h */,
@@ -361,7 +371,9 @@
 				096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */,
 				09356477178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld in Sources */,
 				0935649017903B92003400D3 /* Book.m in Sources */,
-				095E11FD1797330A00541F73 /* NetworkManager.m in Sources */,
+				095E11FD1797330A00541F73 /* NetworkHelper.m in Sources */,
+				093BEF451798665A00140D5A /* Article.m in Sources */,
+				091279861799602E0027FA5B /* SynchronizeThread.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -47,11 +47,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iCops/BooksViewController.m"
-         timestampString = "395783534.765818"
+         timestampString = "395931070.100844"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
+         startingLineNumber = "179"
+         endingLineNumber = "179"
+         landmarkName = "-controllerWillChangeContent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iCops/BooksViewController.m"
+         timestampString = "395931070.100844"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "205"
+         endingLineNumber = "205"
          landmarkName = "-controller:didChangeObject:atIndexPath:forChangeType:newIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,25 +73,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iCops/BooksViewController.m"
-         timestampString = "395783534.765818"
+         timestampString = "395931070.100844"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "215"
-         endingLineNumber = "215"
+         startingLineNumber = "221"
+         endingLineNumber = "221"
          landmarkName = "-controller:didChangeSection:atIndex:forChangeType:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "iCops/BooksViewController.m"
-         timestampString = "395783534.765818"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "231"
-         endingLineNumber = "231"
-         landmarkName = "-controllerDidChangeContent:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -95,16 +95,55 @@
          landmarkType = "4">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iCops/BooksViewController.m"
-         timestampString = "395783505.10006"
+         timestampString = "395931070.100844"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "35"
-         endingLineNumber = "35"
+         startingLineNumber = "36"
+         endingLineNumber = "36"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iCops/SynchronizeThread.m"
+         timestampString = "395931070.100844"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
+         landmarkName = "-synchData"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iCops/iCopsAppDelegate.m"
+         timestampString = "395928575.102277"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "-application:didFinishLaunchingWithOptions:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iCops/SynchronizeThread.m"
+         timestampString = "395931070.100844"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
+         landmarkName = "-runSynchOperation"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

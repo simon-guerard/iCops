@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NetworkManager : NSObject
+@interface NetworkHelper : NSObject
 
 + (NSURL *)smartURLForString:(NSString *)str;
 

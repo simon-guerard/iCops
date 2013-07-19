@@ -9,7 +9,7 @@
 #import "BooksViewController.h"
 #import "BookDetailViewController.h"
 #import "Book.h"
-#import "NetworkManager.h"
+#import "SynchronizeThread.h"
 
 @interface BooksViewController ()
 
@@ -31,27 +31,21 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     
-    // load data from http request
+    // test if data have been loaded
     [self.booksActivityIndicator startAnimating];
-    NSString * urlText = [[NSUserDefaults standardUserDefaults] stringForKey:@"url_cops_preference"];
-    urlText = [urlText stringByAppendingString:@"?page=4"];
-    NSXMLParser *parser;
-    NSURL * url = [NetworkManager smartURLForString:urlText];
-    id id_p = [parser initWithContentsOfURL:url];
-    if ([parser parse]) {
-        // YEAAAAAAH
-    }
-    
-    
-    NSError *error;
-    if (![[self fetchedResultsController] performFetch:&error]) {
-        /*
-         Replace this implementation with code to handle the error appropriately.
-         
-         abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-         */
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
+    if (![[SynchronizeThread sharedInstance:_managedObjectContext] isInitData]){
+        // wait for the end of data loading. An event will be launch to performFetch
+    } else {
+        NSError *error;
+        if (![[self fetchedResultsController] performFetch:&error]) {
+            /*
+             Replace this implementation with code to handle the error appropriately.
+             
+             abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+             */
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
     }
 }
 
@@ -163,7 +157,7 @@
     [fetchRequest setEntity:entity];
     
     // Create the sort descriptors array.
-//    NSSortDescriptor *authorDescriptor = [[NSSortDescriptor alloc] initWithKey:@"author" ascending:YES];
+    //    NSSortDescriptor *authorDescriptor = [[NSSortDescriptor alloc] initWithKey:@"author" ascending:YES];
     NSSortDescriptor *titleDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:titleDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
@@ -244,13 +238,12 @@
     if ([[segue identifier] isEqualToString:@"ShowSelectedBook"]) {
         
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-       Book *selectedBook = (Book *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
+        Book *selectedBook = (Book *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
         
         // Pass the selected book to the new view controller.
         BookDetailViewController *bookDetailViewController = (BookDetailViewController *)[segue destinationViewController];
         bookDetailViewController.book = selectedBook;
     }
 }
-
 
 @end

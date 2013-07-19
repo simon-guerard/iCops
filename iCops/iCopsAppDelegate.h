@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NetworkManager.h"
+#import "NetworkHelper.h"
 
 @interface iCopsAppDelegate : NSObject <UIApplicationDelegate>
 

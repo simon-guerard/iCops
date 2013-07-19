@@ -8,6 +8,7 @@
 
 #import "iCopsAppDelegate.h"
 #import "BooksViewController.h"
+#import "SynchronizeThread.h"
 
 @interface iCopsAppDelegate ()
 
@@ -22,6 +23,8 @@
 
 @implementation iCopsAppDelegate
 
+static SynchronizeThread * synchThread;
+
 @synthesize window=_window;
 @synthesize managedObjectModel=_managedObjectModel, managedObjectContext=_managedObjectContext, persistentStoreCoordinator=_persistentStoreCoordinator;
 
@@ -34,12 +37,8 @@
     BooksViewController *booksViewController = (BooksViewController *)[[navigationController viewControllers] objectAtIndex:0];
     booksViewController.managedObjectContext = self.managedObjectContext;
 
-    /*
-    // Register the preference defaults early.
-    NSDictionary *appDefaults = [NSDictionary
-                                 dictionaryWithObject:[NSNumber numberWithBool:YES] forKey:@"url_cops_preference"];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:appDefaults];
-    */
+    // declare a thread to synchronize database
+    synchThread = [SynchronizeThread sharedInstance:_managedObjectContext];
     return YES;
 }
 							
