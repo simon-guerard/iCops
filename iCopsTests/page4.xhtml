@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tous les livres</title>
+    <script type="text/javascript" src="page4_fichiers/jquery-1.js"></script>
+    <script type="text/javascript" src="page4_fichiers/jquery_003.js"></script>
+    <script type="text/javascript" src="page4_fichiers/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="page4_fichiers/jquery.css" media="screen" />
+    <script type="text/javascript" src="page4_fichiers/jquery_002.js"></script>
+    <link rel="related" href="http://admin.simcafamily.net/cops/feed.php" type="application/atom+xml;profile=opds-catalog" title="Bibliothèque" /> 
+    <link rel="icon" type="image/vnd.microsoft.icon" href="http://admin.simcafamily.net/cops/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="page4_fichiers/css.css" />
+    <link rel="stylesheet" type="text/css" href="page4_fichiers/style-default.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="page4_fichiers/normalize.css" />
+    <script type="text/javascript">
+        $(document).ready(function() {
+            // Handler for .ready() called.
+            
+            $("#sort").click(function(){
+                $('.books').sortElements(function(a, b){
+                    var test = 1;
+                    if ($("#sortorder").val() == "desc")
+                    {
+                        test = -1;
+                    }
+                    return $(a).find ("." + $("#sortchoice").val()).text() &gt; $(b).find ("." + $("#sortchoice").val()).text() ? test : -test;
+                });
+            });
+            
+            $(".fancycover").fancybox({
+                'type' : 'image',
+                prevEffect      : 'none',
+                nextEffect      : 'none'
+                            });
+            
+            $(".fancyabout").fancybox({
+                'type' : 'ajax',
+                title           : 'COPS 0.5.0',
+                prevEffect      : 'none',
+                nextEffect      : 'none'
+                            });
+            
+            $(".fancydetail").fancybox({
+                'type' : 'ajax',
+                prevEffect      : 'none',
+                nextEffect      : 'none'
+                            });
+            
+            $(".headright").click(function(){
+                if ($("#tool").is(":hidden")) {
+                    $("#tool").slideDown("slow");
+                    $.cookie('toolbar', '1');
+                } else {
+                    $("#tool").slideUp();
+                    $.removeCookie('toolbar');
+                }
+            });
+            
+        });
+
+ 
+    </script>
+</head>
+<body>
+<div class="container">
+    <header>
+        <a class="headleft" href="http://admin.simcafamily.net/cops/index.php">
+                <img src="page4_fichiers/home.png" alt="Accueil" />
+        </a>
+        <img class="headright" id="searchImage" src="page4_fichiers/setting64.png" alt="Settings and menu" />
+        <div class="headcenter">
+            <h1>Tous les livres</h1>
+        </div>
+        <div id="tool" style="display: none">
+            <div style="float: left; width: 60%">
+                <form action="index.php" method="get">
+                    <div style="float: right">
+                        <input type="image" src="page4_fichiers/search32.png" alt="Rechercher" />
+                    </div>
+                    <div class="stop">
+                        <input type="hidden" name="current" value="4" />
+                        <input type="hidden" name="page" value="9" />
+                                                <input type="search" name="query" />
+                    </div>
+                </form>
+            </div>
+            </div>
+    </header>
+    <div id="content" style="display: none;"></div>
+    <section>
+        <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=0">
+                    <h2>0</h2>
+                                        <h4>3 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=1">
+                    <h2>1</h2>
+                                        <h4>2 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=2">
+                    <h2>2</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=3">
+                    <h2>3</h2>
+                                        <h4>2 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=5">
+                    <h2>5</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=6">
+                    <h2>6</h2>
+                                        <h4>2 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=8">
+                    <h2>8</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=9">
+                    <h2>9</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=A">
+                    <h2>A</h2>
+                                        <h4>108 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=B">
+                    <h2>B</h2>
+                                        <h4>57 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=C">
+                    <h2>C</h2>
+                                        <h4>139 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=D">
+                    <h2>D</h2>
+                                        <h4>65 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=E">
+                    <h2>E</h2>
+                                        <h4>58 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=F">
+                    <h2>F</h2>
+                                        <h4>57 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=G">
+                    <h2>G</h2>
+                                        <h4>31 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=H">
+                    <h2>H</h2>
+                                        <h4>61 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=I">
+                    <h2>I</h2>
+                                        <h4>32 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=J">
+                    <h2>J</h2>
+                                        <h4>36 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=K">
+                    <h2>K</h2>
+                                        <h4>10 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=L">
+                    <h2>L</h2>
+                                        <h4>248 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=M">
+                    <h2>M</h2>
+                                        <h4>130 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=N">
+                    <h2>N</h2>
+                                        <h4>35 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=O">
+                    <h2>O</h2>
+                                        <h4>28 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=P">
+                    <h2>P</h2>
+                                        <h4>108 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=Q">
+                    <h2>Q</h2>
+                                        <h4>15 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=R">
+                    <h2>R</h2>
+                                        <h4>69 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=S">
+                    <h2>S</h2>
+                                        <h4>99 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=T">
+                    <h2>T</h2>
+                                        <h4>73 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=U">
+                    <h2>U</h2>
+                                        <h4>9 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=V">
+                    <h2>V</h2>
+                                        <h4>38 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=W">
+                    <h2>W</h2>
+                                        <h4>7 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=X">
+                    <h2>X</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=Z">
+                    <h2>Z</h2>
+                                        <h4>5 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=%5B">
+                    <h2>[</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=%C3%80">
+                    <h2>À</h2>
+                                        <h4>1 livre</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=%C3%89">
+                    <h2>É</h2>
+                                        <h4>5 livres</h4> 
+                </a>
+            </div>
+        </article>
+                <article>
+            <div class="frontpage">
+             <a href="http://admin.simcafamily.net/cops/index.php?page=5&amp;id=%C3%A9">
+                    <h2>é</h2>
+                                        <h4>10 livres</h4> 
+                </a>
+            </div>
+        </article>
+            </section>
+    <footer>
+        <div class="footleft">
+            <a href="http://admin.simcafamily.net/cops/customize.php"><img src="page4_fichiers/theme.png" alt="Paramétrage de COPS" /></a>
+        </div>
+        <div class="footright">
+            <a class="fancyabout" href="http://admin.simcafamily.net/cops/about.xml"><img src="page4_fichiers/info.png" alt="A propos de COPS" /></a>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
