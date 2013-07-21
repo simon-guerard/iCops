@@ -17,6 +17,5 @@
 
 +(SynchronizeThread *) sharedInstance:NSManagedObjectContext;
 
--(void) synchData;
 -(Boolean)isInitData;
 @end

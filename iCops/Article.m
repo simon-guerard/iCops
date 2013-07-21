@@ -10,6 +10,24 @@
 
 @implementation Article
 
-@synthesize name,link,type;
+@synthesize name,link,type,idArticle,imgLink,image,downloadUrl,format,author;
 
+- (BOOL)isEqual:(id)anObject {
+    if (anObject == self) {
+        return YES;
+    } else if (!anObject || ![anObject isKindOfClass:[self class]]) {
+        return NO;
+    }
+    return [self isEqualToArticle:anObject];
+}
+
+- (BOOL)isEqualToArticle:(Article *)anArticle {
+    if (self == anArticle)
+        return YES;
+    if (![(id)[self name] isEqual:[anArticle name]])
+        return NO;
+    if (![(NSString *)[self type] isEqual:[anArticle type]])
+        return NO;
+    return YES;
+}
 @end

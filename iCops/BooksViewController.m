@@ -158,12 +158,12 @@
     
     // Create the sort descriptors array.
     //    NSSortDescriptor *authorDescriptor = [[NSSortDescriptor alloc] initWithKey:@"author" ascending:YES];
-    NSSortDescriptor *titleDescriptor = [[NSSortDescriptor alloc] initWithKey:@"title" ascending:YES];
+    NSSortDescriptor *titleDescriptor = [[NSSortDescriptor alloc] initWithKey:@"firstLetter" ascending:YES];
     NSArray *sortDescriptors = [[NSArray alloc] initWithObjects:titleDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     
     // Create and initialize the fetch results controller.
-    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"title" cacheName:@"Root"];
+    _fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:@"firstLetter" cacheName:nil];
     _fetchedResultsController.delegate = self;
     
     // Memory management.
@@ -243,6 +243,14 @@
         // Pass the selected book to the new view controller.
         BookDetailViewController *bookDetailViewController = (BookDetailViewController *)[segue destinationViewController];
         bookDetailViewController.book = selectedBook;
+    }
+}
+
+- (IBAction)resfreshTable:(UIBarButtonItem *)sender {
+    [[self fetchedResultsController] performFetch:nil];
+    [self.tableView reloadData];
+    if ([[SynchronizeThread sharedInstance:_managedObjectContext] initData]) {
+        [booksActivityIndicator stopAnimating];
     }
 }
 

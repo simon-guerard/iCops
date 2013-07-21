@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *booksActivityIndicator;
+- (IBAction)resfreshTable:(UIBarButtonItem *)sender;
 
 @end
