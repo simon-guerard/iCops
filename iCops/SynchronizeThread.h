@@ -11,6 +11,8 @@
 
 @interface SynchronizeThread : NSObject<NSXMLParserDelegate>
 
+extern NSString *const LoadingBooksNotificationConstant;
+
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @property Boolean initData;

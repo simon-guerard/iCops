@@ -17,6 +17,7 @@
 @property NSOperationQueue * aQueue;
 
 @property NSMutableArray * sections;
+@property NSMutableArray * articlesList;
 @property Article * currentArticle;
 @property NSString * currentPropName;
 @property NSMutableString * currentStringValue;
@@ -24,7 +25,9 @@
 @property BOOL currentCover;
 @property BOOL bookDetail;
 
--(void) synchData;
+-(void) synchData:(Article *)article;
+-(void) synchSections;
+-(void) synchDataWithStore;
 
 @end
 
@@ -32,8 +35,10 @@
 
 static SynchronizeThread * sharedInstance;
 
+NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
+
 @synthesize managedObjectContext=_managedObjectContext,aQueue=_aQueue,initData=_initData;
-@synthesize currentPropName,currentStringValue,sections,currentArticle,downloadLink,bookDetail,currentCover;
+@synthesize currentPropName,currentStringValue,sections,currentArticle,downloadLink,bookDetail,currentCover,articlesList;
 
 +(SynchronizeThread *) sharedInstance:(NSManagedObjectContext *) managedContext {
     if (! sharedInstance) {
@@ -49,14 +54,14 @@ static SynchronizeThread * sharedInstance;
     if (self) {
         // Initialize self.
        _aQueue = [[NSOperationQueue alloc] init];
+        [_aQueue setName:@"LoadingQueue"];
         _initData=false;
         
         // init a timer to run synchronization thread method all 15 seconds.
         NSTimer * timer = [NSTimer timerWithTimeInterval:1500 target:self selector:@selector(runSynchOperation) userInfo:nil repeats:YES];
         
         // attach the timer to the currentRunLoop
-        NSRunLoop * runLoop = [NSRunLoop currentRunLoop];
-        [runLoop addTimer:timer forMode:NSDefaultRunLoopMode];
+        [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSDefaultRunLoopMode];
         
         [self runSynchOperation];
     }
@@ -71,13 +76,13 @@ static SynchronizeThread * sharedInstance;
 
 -(void) runSynchOperation {
     // create an operation to synchronize data
-    NSInvocationOperation * operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(synchData) object:nil];
+    NSInvocationOperation * operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(synchSections) object:nil];
     
     // put the operation in the queue
     [_aQueue addOperation:operation];
 }
 
--(void) synchData {
+-(void) synchSections {
     NSLog(@"Synchronization of data");
     
     // get the default url of cops application
@@ -103,41 +108,65 @@ static SynchronizeThread * sharedInstance;
         
         // clone the sections array to loop into
         NSArray * cloneSections = [NSArray arrayWithArray:sections];
+        NSMutableArray * operations = [[NSMutableArray alloc] init];
         for (Article * art in cloneSections) {
             
             if ([art.type isEqualToString:@"frontpage"]) {
-                NSLog(@"objects: %@", art.name);
-                
-                // for each article, get the cops books page (list of books for the first given letter)
-                urlBase = [urlText stringByAppendingString:art.link];
-                
-                // for test
-                //urlBase = @"http://localhost/~simonguerard/page5-0.xhtml";
-                
-                NSLog(@"urlBase: %@", urlBase);
-                url = [NetworkHelper smartURLForString:urlBase];
-                
-                // parse the cops books page to get books detail
-                NSXMLParser * subParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
-                if(subParser) {
-                    [subParser setDelegate:self];
-                    [subParser setShouldResolveExternalEntities:YES];
-                    if([subParser parse])
-                        NSLog(@"subParser OK");
-                } else {
-                    NSLog(@"No parsing.");
-                }
-                
-                // for test
-                //break;
+                NSLog(@"idArticle: %@", art.idArticle);
+                // create an operation to synchronize data
+                NSInvocationOperation * operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(synchData:) object:art];
+
+                // add the operation into the array
+                [operations addObject:operation];
             }
         }
+        // put the operations in the queue and wait all of them are finish.
+        [_aQueue addOperations:operations waitUntilFinished:YES];
     }
     
-    // loop over all the sections to insert book into managedObjectContext
-    for (Article * art in sections) {
-        if ([art.type isEqualToString:@"books"]) {
+    [ self synchDataWithStore];
+    
+    // data has been initialize more than one time
+    _initData=true;
+    
+    // send notification to inform books are loaded
+    [[NSNotificationCenter defaultCenter]postNotificationName:LoadingBooksNotificationConstant object:self];
+}
 
+-(void) synchData:(id) argument {
+    NSLog(@"Synchronization of data");
+    
+    // get the default url of cops application
+    NSString * urlText = [[NSUserDefaults standardUserDefaults] stringForKey:@"url_cops_preference"];
+    
+    // for each article, get the cops books page (list of books for the first given letter)
+    Article * article = argument;
+    NSString * urlBase = [urlText stringByAppendingString:[article link]];
+    
+    // for test
+    //urlBase = @"http://localhost/~simonguerard/page5-0.xhtml";
+    
+    NSLog(@"urlBase: %@", urlBase);
+    NSURL * url = [NetworkHelper smartURLForString:urlBase];
+    
+    // parse the cops books page to get books detail
+    NSXMLParser * subParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+    if(subParser) {
+        [subParser setDelegate:self];
+        [subParser setShouldResolveExternalEntities:YES];
+        if([subParser parse])
+            NSLog(@"subParser OK");
+    } else {
+        NSLog(@"No parsing.");
+    }
+    
+}
+
+-(void) synchDataWithStore {
+    // loop over all the sections to insert book into managedObjectContext
+    for (Article * art in articlesList) {
+        if ([art.type isEqualToString:@"books"]) {
+            
             // Create the fetch request for the entity.
             NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
             // Edit the entity name as appropriate.
@@ -148,6 +177,8 @@ static SynchronizeThread * sharedInstance;
             NSNumber * idBook = [numberFormatter numberFromString:art.idArticle];
             NSPredicate *predicate = [NSPredicate predicateWithFormat:
                                       @"(idBook = %@)", idBook];
+            numberFormatter = nil;
+            idBook = nil;
             [fetchRequest setPredicate:predicate];
             
             NSError *error;
@@ -160,7 +191,7 @@ static SynchronizeThread * sharedInstance;
             if (array.count == 0) {
                 // create the book
                 NSLog(@"Creation of a new book.");
-
+                
                 Book *newBook = [NSEntityDescription insertNewObjectForEntityForName:@"Book" inManagedObjectContext:_managedObjectContext];
                 [newBook setIdBook:idBook];
                 [newBook setTitle:art.name];
@@ -172,10 +203,10 @@ static SynchronizeThread * sharedInstance;
                 
                 Author * author = [self getAuthor:art.author];
                 [newBook setAuthor:author];
-
+                
                 NSManagedObjectContext * moc = [self managedObjectContext];
                 [moc insertObject:newBook];
-
+                
             } else {
                 // modify the book
                 Book * oldBook = array[0];
@@ -213,11 +244,10 @@ static SynchronizeThread * sharedInstance;
                     [moc processPendingChanges];
                 }
             }
+            fetchRequest = nil;
+            entity = nil;
         }
     }
-    
-    // data has been initialize more than one time
-    _initData=true;
 }
 
 -(Author *) getAuthor:(NSString *)name {
@@ -257,8 +287,12 @@ static SynchronizeThread * sharedInstance;
     
     if ( [elementName isEqualToString:@"section"]) {
         // sections is an NSMutableArray instance variable
-        if (!sections)
+        if (!sections) {
             sections = [[NSMutableArray alloc] init];
+        }
+        if (!articlesList) {
+            articlesList = [[NSMutableArray alloc] init];
+        }
         return;
     }
     
@@ -382,8 +416,13 @@ static SynchronizeThread * sharedInstance;
     
     if ( [elementName isEqualToString:@"article"] ) {
         // addresses and currentPerson are instance variables
-        if( ![sections containsObject:currentArticle]) {
+        if([[currentArticle type] isEqualToString:@"frontpage"] && ![sections containsObject:currentArticle]) {
             [sections addObject:currentArticle];
+            currentArticle = nil;
+            return;
+        }
+        if([[currentArticle type] isEqualToString:@"books"] && ![articlesList containsObject:currentArticle]) {
+            [articlesList addObject:currentArticle];
             currentArticle = nil;
             return;
         }

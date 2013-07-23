@@ -19,6 +19,7 @@
 @end
 
 
+// #define kCheckinMessage 100
 
 @implementation BooksViewController
 
@@ -29,7 +30,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(resfreshTableData) name:LoadingBooksNotificationConstant object:nil];
     
     // test if data have been loaded
     [self.booksActivityIndicator startAnimating];
@@ -247,6 +248,10 @@
 }
 
 - (IBAction)resfreshTable:(UIBarButtonItem *)sender {
+    [self resfreshTableData];
+}
+
+- (void)resfreshTableData {
     [[self fetchedResultsController] performFetch:nil];
     [self.tableView reloadData];
     if ([[SynchronizeThread sharedInstance:_managedObjectContext] initData]) {
@@ -255,3 +260,4 @@
 }
 
 @end
+    
