@@ -1,4 +1,3 @@
-
 *.xcuserstate
 
 *.xcworkspacedata
@@ -6,3 +5,5 @@
 *.xcscheme
 
 iCops.xcodeproj/xcuserdata/simonguerard.xcuserdatad/xcschemes/xcschememanagement.plist
+
+iCopsTests/resources
