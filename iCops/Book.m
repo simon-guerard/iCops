@@ -2,7 +2,7 @@
 //  Book.m
 //  iCops
 //
-//  Created by Simon Guérard on 21/07/13.
+//  Created by Simon Guérard on 30/07/13.
 //  Copyright (c) 2013 Simon Guérard. All rights reserved.
 //
 
@@ -13,12 +13,12 @@
 @implementation Book
 
 @dynamic downloadUrl;
+@dynamic firstLetter;
 @dynamic format;
 @dynamic idBook;
 @dynamic image;
 @dynamic imgLink;
 @dynamic title;
-@dynamic firstLetter;
 @dynamic author;
 
 @end

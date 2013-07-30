@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class Book;
+#import <CoreData/CoreData.h>
+#import <ImageIO/ImageIO.h>
+#import "ImageIOHelper.h"
+#import "Book.h"
+#import "Author.h"
+//@class Book;
 
 @interface BookDetailViewController : UITableViewController
 

@@ -6,3 +6,5 @@
 *.xcscheme
 
 iCops.xcodeproj/xcuserdata/simonguerard.xcuserdatad/xcschemes/xcschememanagement.plist
+
+*.xcbkptlist

@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
 
-@interface AuthorsViewController : UIViewController
+@interface AuthorsViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
 
 @end

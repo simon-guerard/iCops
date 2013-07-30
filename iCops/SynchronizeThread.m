@@ -55,7 +55,7 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
         // Initialize self.
        _aQueue = [[NSOperationQueue alloc] init];
         [_aQueue setName:@"LoadingQueue"];
-        _initData=false;
+        _initData=true;
         
         // init a timer to run synchronization thread method all 15 seconds.
         NSTimer * timer = [NSTimer timerWithTimeInterval:1500 target:self selector:@selector(runSynchOperation) userInfo:nil repeats:YES];
@@ -92,7 +92,7 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
     NSString * urlBase = [urlText stringByAppendingString:@"/cops/index.php?page=4"];
     
     // for test
-    //urlBase = @"http://localhost/~simonguerard/page4.xhtml";
+    // urlBase = @"http://localhost/~simonguerard/admin.simcafamily.net/cops/index-page=4.php.html";
     
     NSLog(@"urlBase: %@", urlBase);
     NSURL * url = [NetworkHelper smartURLForString:urlBase];
@@ -109,15 +109,17 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
         // clone the sections array to loop into
         NSArray * cloneSections = [NSArray arrayWithArray:sections];
         NSMutableArray * operations = [[NSMutableArray alloc] init];
+        int nbSec = 0;
         for (Article * art in cloneSections) {
-            
+            nbSec++;
             if ([art.type isEqualToString:@"frontpage"]) {
                 NSLog(@"idArticle: %@", art.idArticle);
-                // create an operation to synchronize data
+//                [self synchData:art];
                 NSInvocationOperation * operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(synchData:) object:art];
-
-                // add the operation into the array
                 [operations addObject:operation];
+            }
+            if (nbSec > 10) {
+                break;
             }
         }
         // put the operations in the queue and wait all of them are finish.
@@ -138,13 +140,15 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
     
     // get the default url of cops application
     NSString * urlText = [[NSUserDefaults standardUserDefaults] stringForKey:@"url_cops_preference"];
+    // for test
+    //urlText = @"http://localhost/~simonguerard/admin.simcafamily.net/cops/";
     
     // for each article, get the cops books page (list of books for the first given letter)
     Article * article = argument;
     NSString * urlBase = [urlText stringByAppendingString:[article link]];
     
     // for test
-    //urlBase = @"http://localhost/~simonguerard/page5-0.xhtml";
+    // urlBase = @"http://localhost/~simonguerard/admin.simcafamily.net/cops/index-page=5.php.html";
     
     NSLog(@"urlBase: %@", urlBase);
     NSURL * url = [NetworkHelper smartURLForString:urlBase];
@@ -163,6 +167,7 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
 }
 
 -(void) synchDataWithStore {
+    int nb=0;
     // loop over all the sections to insert book into managedObjectContext
     for (Article * art in articlesList) {
         if ([art.type isEqualToString:@"books"]) {
@@ -197,7 +202,13 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
                 [newBook setTitle:art.name];
                 [newBook setFirstLetter:[[art.name substringToIndex:1] capitalizedString]];
                 [newBook setImgLink:art.imgLink];
-                [newBook setImage:art.image];
+                // Get the URL for the pathname passed to the function.
+                NSURL *url = [NSURL URLWithString:art.image];
+                // Create an image source from the URL.
+                CGDataProviderRef provider = CGDataProviderCreateWithURL ((__bridge CFURLRef)url);
+                NSData * data = (__bridge NSData *)(CGDataProviderCopyData(provider));
+                CGDataProviderRelease(provider);
+                [newBook setImage:data];
                 [newBook setDownloadUrl:art.downloadUrl];
                 [newBook setFormat:art.format];
                 
@@ -206,7 +217,7 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
                 
                 NSManagedObjectContext * moc = [self managedObjectContext];
                 [moc insertObject:newBook];
-                
+                [moc processPendingChanges];
             } else {
                 // modify the book
                 Book * oldBook = array[0];
@@ -218,10 +229,13 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
                 }
                 if (![oldBook.imgLink isEqualToString:art.imgLink]) {
                     oldBook.imgLink = art.imgLink;
-                    modified=true;
-                }
-                if (![oldBook.image isEqualToString:art.image]) {
-                    oldBook.image = art.image;
+                    // Get the URL for the pathname passed to the function.
+                    NSURL *url = [NSURL URLWithString:art.image];
+                    // Create an image source from the URL.
+                    CGDataProviderRef provider = CGDataProviderCreateWithURL ((__bridge CFURLRef)url);
+                    NSData * data = (__bridge NSData *)(CGDataProviderCopyData(provider));
+                    CGDataProviderRelease(provider);
+                    [oldBook setImage:data];
                     modified=true;
                 }
                 if (![oldBook.downloadUrl isEqualToString:art.downloadUrl]) {
@@ -246,6 +260,10 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
             }
             fetchRequest = nil;
             entity = nil;
+        }
+        nb++;
+        if (nb > 20) {
+            break;
         }
     }
 }
@@ -371,7 +389,11 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
     if (currentArticle && currentCover && [elementName isEqualToString:@"img"]) {
         NSString *attrSrc = [attributeDict objectForKey:@"src"];
         if (attrSrc) {
-            [currentArticle setImage:attrSrc];
+            // get the default url of cops application
+            NSString * urlText = [[NSUserDefaults standardUserDefaults] stringForKey:@"url_cops_preference"];
+            NSString * urlImage = [[urlText stringByAppendingString:@"/cops/"] stringByAppendingString:attrSrc];
+            
+            [currentArticle setImage:urlImage];
             currentCover=false;
         }
         return;
@@ -434,6 +456,5 @@ NSString *const LoadingBooksNotificationConstant = @"LoadingBooksNotification";
     }
     currentStringValue = nil;
 }
-
 
 @end

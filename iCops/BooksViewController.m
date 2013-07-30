@@ -18,9 +18,6 @@
 
 @end
 
-
-// #define kCheckinMessage 100
-
 @implementation BooksViewController
 
 @synthesize fetchedResultsController=_fetchedResultsController, managedObjectContext=_managedObjectContext,connection=_connection;
@@ -55,13 +52,11 @@
     [self.tableView reloadData];
 }
 
-
 - (void)viewDidUnload
 {
     // Release any properties that are loaded in viewDidLoad or can be recreated lazily.
     self.fetchedResultsController = nil;
 }
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -137,8 +132,22 @@
     if (cell == nil)
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:BookIdentifier];
     
+    // Configure the cell.
+    [self configureCell:cell atIndexPath:indexPath];
+
     return cell;
 }
+
+#pragma mark -
+#pragma mark Table view editing
+
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // The table view should not be re-orderable.
+    return NO;
+}
+
 
 #pragma mark -
 #pragma mark Fetched results controller
@@ -248,6 +257,7 @@
 }
 
 - (IBAction)resfreshTable:(UIBarButtonItem *)sender {
+    [self.booksActivityIndicator startAnimating];
     [self resfreshTableData];
 }
 
