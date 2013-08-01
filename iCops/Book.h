@@ -2,14 +2,14 @@
 //  Book.h
 //  iCops
 //
-//  Created by Simon Guérard on 30/07/13.
+//  Created by Simon Guérard on 01/08/13.
 //  Copyright (c) 2013 Simon Guérard. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Author;
+@class Author, Library;
 
 @interface Book : NSManagedObject
 
@@ -20,6 +20,8 @@
 @property (nonatomic, retain) NSData * image;
 @property (nonatomic, retain) NSString * imgLink;
 @property (nonatomic, retain) NSString * title;
+@property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) Author *author;
+@property (nonatomic, retain) Library *library;
 
 @end

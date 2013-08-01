@@ -15,9 +15,12 @@
 		093BEF451798665A00140D5A /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 093BEF441798665A00140D5A /* Article.m */; };
 		095E11FD1797330A00541F73 /* NetworkHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 095E11FB1797330A00541F73 /* NetworkHelper.m */; };
 		096CE060178A10A600CBA357 /* BookDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 096CE05F178A10A600CBA357 /* BookDetailViewController.m */; };
+		09AF876817AAF6950054BB90 /* LibraryParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF876717AAF6950054BB90 /* LibraryParserDelegate.m */; };
+		09AF877D17AB01350054BB90 /* BookParserDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF877C17AB01350054BB90 /* BookParserDelegate.m */; };
+		09AF878017AB08BF0054BB90 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF877F17AB08BF0054BB90 /* Book.m */; };
+		09AF878317AB08BF0054BB90 /* Library.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF878217AB08BF0054BB90 /* Library.m */; };
+		09AF878617AB08C00054BB90 /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AF878517AB08C00054BB90 /* Author.m */; };
 		09D32F0E17A85F67001084DD /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09D32F0D17A85F67001084DD /* ImageIO.framework */; };
-		09D32F1717A868F8001084DD /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D32F1617A868F8001084DD /* Book.m */; };
-		09D32F1A17A868F8001084DD /* Author.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D32F1917A868F8001084DD /* Author.m */; };
 		09D32F1D17A86D92001084DD /* BookCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D32F1C17A86D92001084DD /* BookCoverViewController.m */; };
 		09D32F2017A870B6001084DD /* ImageIOHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D32F1F17A870B6001084DD /* ImageIOHelper.m */; };
 		09F51F5B1789CD6800545BB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F51F5A1789CD6800545BB3 /* UIKit.framework */; };
@@ -68,11 +71,17 @@
 		095E11FC1797330A00541F73 /* NetworkHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkHelper.h; sourceTree = "<group>"; };
 		096CE05E178A10A600CBA357 /* BookDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookDetailViewController.h; sourceTree = "<group>"; };
 		096CE05F178A10A600CBA357 /* BookDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookDetailViewController.m; sourceTree = "<group>"; };
+		09AF876617AAF6950054BB90 /* LibraryParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LibraryParserDelegate.h; path = Parser/LibraryParserDelegate.h; sourceTree = "<group>"; };
+		09AF876717AAF6950054BB90 /* LibraryParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LibraryParserDelegate.m; path = Parser/LibraryParserDelegate.m; sourceTree = "<group>"; };
+		09AF876D17AAF7120054BB90 /* BookParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BookParserDelegate.h; path = Parser/BookParserDelegate.h; sourceTree = "<group>"; };
+		09AF877C17AB01350054BB90 /* BookParserDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BookParserDelegate.m; path = Parser/BookParserDelegate.m; sourceTree = "<group>"; };
+		09AF877E17AB08BF0054BB90 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		09AF877F17AB08BF0054BB90 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		09AF878117AB08BF0054BB90 /* Library.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Library.h; sourceTree = "<group>"; };
+		09AF878217AB08BF0054BB90 /* Library.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Library.m; sourceTree = "<group>"; };
+		09AF878417AB08C00054BB90 /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
+		09AF878517AB08C00054BB90 /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		09D32F0D17A85F67001084DD /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		09D32F1517A868F8001084DD /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
-		09D32F1617A868F8001084DD /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
-		09D32F1817A868F8001084DD /* Author.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Author.h; sourceTree = "<group>"; };
-		09D32F1917A868F8001084DD /* Author.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Author.m; sourceTree = "<group>"; };
 		09D32F1B17A86D92001084DD /* BookCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookCoverViewController.h; sourceTree = "<group>"; };
 		09D32F1C17A86D92001084DD /* BookCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookCoverViewController.m; sourceTree = "<group>"; };
 		09D32F1E17A870B6001084DD /* ImageIOHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageIOHelper.h; sourceTree = "<group>"; };
@@ -138,6 +147,12 @@
 			isa = PBXGroup;
 			children = (
 				09356475178EDBC7003400D3 /* iCopsBooksModel.xcdatamodeld */,
+				09AF878417AB08C00054BB90 /* Author.h */,
+				09AF878517AB08C00054BB90 /* Author.m */,
+				09AF878117AB08BF0054BB90 /* Library.h */,
+				09AF878217AB08BF0054BB90 /* Library.m */,
+				09AF877E17AB08BF0054BB90 /* Book.h */,
+				09AF877F17AB08BF0054BB90 /* Book.m */,
 				09F51F621789CD6800545BB3 /* iCops-Info.plist */,
 				09F51F631789CD6900545BB3 /* InfoPlist.strings */,
 				091629FD178DF264000E76C6 /* Images */,
@@ -162,6 +177,19 @@
 			);
 			name = Images;
 			path = images;
+			sourceTree = "<group>";
+		};
+		09AF876917AAF6A70054BB90 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				093BEF431798665A00140D5A /* Article.h */,
+				093BEF441798665A00140D5A /* Article.m */,
+				09AF876617AAF6950054BB90 /* LibraryParserDelegate.h */,
+				09AF876717AAF6950054BB90 /* LibraryParserDelegate.m */,
+				09AF876D17AAF7120054BB90 /* BookParserDelegate.h */,
+				09AF877C17AB01350054BB90 /* BookParserDelegate.m */,
+			);
+			name = Parser;
 			sourceTree = "<group>";
 		};
 		09F51F4E1789CD6800545BB3 = {
@@ -201,12 +229,6 @@
 		09F51F601789CD6800545BB3 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				09D32F1817A868F8001084DD /* Author.h */,
-				09D32F1917A868F8001084DD /* Author.m */,
-				09D32F1517A868F8001084DD /* Book.h */,
-				09D32F1617A868F8001084DD /* Book.m */,
-				093BEF431798665A00140D5A /* Article.h */,
-				093BEF441798665A00140D5A /* Article.m */,
 				095E11FC1797330A00541F73 /* NetworkHelper.h */,
 				095E11FB1797330A00541F73 /* NetworkHelper.m */,
 				091279841799602E0027FA5B /* SynchronizeThread.h */,
@@ -223,6 +245,7 @@
 				09D32F1C17A86D92001084DD /* BookCoverViewController.m */,
 				09D32F1E17A870B6001084DD /* ImageIOHelper.h */,
 				09D32F1F17A870B6001084DD /* ImageIOHelper.m */,
+				09AF876917AAF6A70054BB90 /* Parser */,
 			);
 			name = Sources;
 			path = iCops;
@@ -384,10 +407,13 @@
 				095E11FD1797330A00541F73 /* NetworkHelper.m in Sources */,
 				093BEF451798665A00140D5A /* Article.m in Sources */,
 				091279861799602E0027FA5B /* SynchronizeThread.m in Sources */,
-				09D32F1717A868F8001084DD /* Book.m in Sources */,
-				09D32F1A17A868F8001084DD /* Author.m in Sources */,
 				09D32F1D17A86D92001084DD /* BookCoverViewController.m in Sources */,
 				09D32F2017A870B6001084DD /* ImageIOHelper.m in Sources */,
+				09AF876817AAF6950054BB90 /* LibraryParserDelegate.m in Sources */,
+				09AF877D17AB01350054BB90 /* BookParserDelegate.m in Sources */,
+				09AF878017AB08BF0054BB90 /* Book.m in Sources */,
+				09AF878317AB08BF0054BB90 /* Library.m in Sources */,
+				09AF878617AB08C00054BB90 /* Author.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

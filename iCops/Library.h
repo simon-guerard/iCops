@@ -1,5 +1,5 @@
 //
-//  Author.h
+//  Library.h
 //  iCops
 //
 //  Created by Simon Guérard on 01/08/13.
@@ -11,9 +11,11 @@
 
 @class Book;
 
-@interface Author : NSManagedObject
+@interface Library : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * subname;
+@property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) Book *books;
 
 @end

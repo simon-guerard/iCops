@@ -11,11 +11,20 @@
         <attribute name="idBook" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="imgLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="author" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Author" inverseName="books" inverseEntity="Author" syncable="YES"/>
+        <relationship name="library" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Library" inverseName="books" inverseEntity="Library" syncable="YES"/>
+    </entity>
+    <entity name="Library" representedClassName="Library" syncable="YES">
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="subname" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="books" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Book" inverseName="library" inverseEntity="Book" syncable="YES"/>
     </entity>
     <elements>
         <element name="Author" positionX="457" positionY="123" width="128" height="75"/>
-        <element name="Book" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="Book" positionX="160" positionY="192" width="128" height="195"/>
+        <element name="Library" positionX="160" positionY="192" width="128" height="105"/>
     </elements>
 </model>

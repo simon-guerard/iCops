@@ -12,6 +12,7 @@
 
 @property (nonatomic, retain) NSString * link;
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * subname;
 @property (nonatomic, retain) NSString * type;
 @property (nonatomic, retain) NSString * idArticle;
 @property (nonatomic, retain) NSString * imgLink;

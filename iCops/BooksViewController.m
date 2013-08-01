@@ -250,6 +250,11 @@
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         Book *selectedBook = (Book *)[[self fetchedResultsController] objectAtIndexPath:indexPath];
         
+        // retrieve book's detail
+        NSInvocationOperation * operation = [[NSInvocationOperation alloc] initWithTarget:[SynchronizeThread sharedInstance:_managedObjectContext] selector:@selector(synchBookDetail:) object:selectedBook.link];
+        // put the operation in the queue
+        [[SynchronizeThread sharedInstance:_managedObjectContext].aQueue addOperation:operation];
+        
         // Pass the selected book to the new view controller.
         BookDetailViewController *bookDetailViewController = (BookDetailViewController *)[segue destinationViewController];
         bookDetailViewController.book = selectedBook;

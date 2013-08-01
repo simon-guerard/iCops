@@ -15,7 +15,7 @@
 extern NSString *const LoadingBooksNotificationConstant;
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
+@property NSOperationQueue * aQueue;
 @property Boolean initData;
 
 +(SynchronizeThread *) sharedInstance:NSManagedObjectContext;

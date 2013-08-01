@@ -10,7 +10,7 @@
 
 @implementation Article
 
-@synthesize name,link,type,idArticle,imgLink,image,downloadUrl,format,author;
+@synthesize name,subname,link,type,idArticle,imgLink,image,downloadUrl,format,author;
 
 - (BOOL)isEqual:(id)anObject {
     if (anObject == self) {
@@ -24,6 +24,8 @@
 - (BOOL)isEqualToArticle:(Article *)anArticle {
     if (self == anArticle)
         return YES;
+    if (![(id)[self idArticle] isEqual:[anArticle idArticle]])
+        return NO;
     if (![(id)[self name] isEqual:[anArticle name]])
         return NO;
     if (![(NSString *)[self type] isEqual:[anArticle type]])
